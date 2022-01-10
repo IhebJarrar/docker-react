@@ -13,3 +13,12 @@ jobs:
         run: docker build -t iheb.jarrar/docker-react -f Dockerfile.dev .
       - name: Run tests
         run: docker run iheb.jarrar/docker-react npm run test -- --coverage
+  Deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency: production
+    steps:
+      - name: deploy
+        run: docker build -t iheb.jarrar/docker-react .
+      - name: Run deployment
+        run: docker run iheb.jarrar/docker-react
