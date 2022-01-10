@@ -10,6 +10,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Build docker image
-        run: docker build -t iheb.jarrar/docker-react -f Dockerfile.dev -- --coverage
+        run: docker build -t iheb.jarrar/docker-react -f Dockerfile.dev .
       - name: Run tests
-        run: docker run iheb.jarrar/docker-react npm run test
+        run: docker run iheb.jarrar/docker npm run test -- --coverage
