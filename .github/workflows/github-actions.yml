@@ -12,4 +12,4 @@ jobs:
       - name: Build docker image
         run: docker build -t iheb.jarrar/docker-react -f Dockerfile.dev .
       - name: Run tests
-        run: docker run iheb.jarrar/docker npm run test -- --coverage
+        run: docker run iheb.jarrar/docker-react npm run test -- --coverage
