@@ -19,6 +19,6 @@ jobs:
     concurrency: production
     steps:
       - name: deploy
-        run: docker build -t iheb.jarrar/docker-react -f Dockerfile .
+        run: docker build -t iheb.jarrar/docker-react -f Dockerfile ../../.
       - name: Run deployment
         run: docker run iheb.jarrar/docker-react
